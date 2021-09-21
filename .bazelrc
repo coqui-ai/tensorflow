@@ -94,6 +94,9 @@ build:libc++ --linkopt -fuse-ld=lld
 # https://docs.bazel.build/versions/master/user-manual.html#flag--fat_apk_cpu
 build:android --crosstool_top=//external:android/crosstool
 build:android --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:android --copt=-D_GLIBCXX_USE_C99
+build:android --cxxopt=-std=c++14
+build:android --action_env ANDROID_NDK_API_LEVEL=21
 build:android_arm --config=android
 build:android_arm --cpu=armeabi-v7a
 build:android_arm --fat_apk_cpu=armeabi-v7a
