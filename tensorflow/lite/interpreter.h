@@ -836,9 +836,13 @@ class Interpreter {
     return ModifyGraphWithDelegateImpl(owned_delegates_.back().get());
   }
 
+//TODO: stop exposing this private API and figure out a better solution
+//      for the feature computation graph
+public:
   // Overrides execution plan. ImplThis bounds checks indices sent in.
   // Note: Only used during initialization.
   TfLiteStatus SetExecutionPlan(const std::vector<int>& new_plan);
+private:
 
   // Sets the profiler to all subgraphs.
   void SetSubgraphProfiler();
