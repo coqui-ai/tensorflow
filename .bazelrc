@@ -138,6 +138,9 @@ build --enable_platform_specific_config
 # Enable XLA support by default.
 build --define=with_xla_support=true
 
+# Enable Ruy by default
+build --define=tflite_with_ruy=true
+
 # TODO(mihaimaruseac): Document this option or remove if no longer needed
 build --config=short_logs
 

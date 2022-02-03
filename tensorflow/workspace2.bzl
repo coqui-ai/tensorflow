@@ -45,6 +45,7 @@ load("//third_party/vulkan_headers:workspace.bzl", vulkan_headers = "repo")
 load("//third_party/tensorrt:workspace.bzl", tensorrt = "repo")
 
 # Import external repository rules.
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:java.bzl", "java_import_external")
 load("@io_bazel_rules_closure//closure:defs.bzl", "filegroup_external")
 load("@tf_runtime//:dependencies.bzl", "tfrt_dependencies")
@@ -140,6 +141,13 @@ def _tf_repositories():
         urls = tf_mirror_urls("https://github.com/google/XNNPACK/archive/113092317754c7dea47bfb3cb49c4f59c3c1fa10.zip"),
     )
     # LINT.ThenChange(//tensorflow/lite/tools/cmake/modules/xnnpack.cmake)
+
+    git_repository(
+        name = "com_github_nelhage_rules_boost",
+        commit = "1e3a69bf2d5cd10c34b74f066054cd335d033d71",
+        remote = "https://github.com/nelhage/rules_boost",
+        shallow_since = "1591047380 -0700",
+    )
 
     tf_http_archive(
         name = "FXdiv",

@@ -757,9 +757,13 @@ class Interpreter {
   // Applies TFLite default delegates.
   TfLiteStatus ApplyLazyDelegateProviders();
 
+//TODO: stop exposing this private API and figure out a better solution
+//      for the feature computation graph
+public:
   // Overrides execution plan. This bounds checks indices sent in.
   // Note: Only used during initialization.
   TfLiteStatus SetExecutionPlan(const std::vector<int>& new_plan);
+private:
 
   // Sets the profiler to all subgraphs.
   void SetSubgraphProfiler();
