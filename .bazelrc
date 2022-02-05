@@ -138,6 +138,9 @@ build --define=with_xla_support=true
 # Enable Ruy by default
 build --define=tflite_with_ruy=true
 
+# Enable XNNPack by default
+build --define=tflite_with_xnnpack=true --define xnn_enable_qs8=true --define xnn_enable_qu8=true
+
 # TODO(mihaimaruseac): Document this option or remove if no longer needed
 build --config=short_logs
 
