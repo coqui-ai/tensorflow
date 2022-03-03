@@ -1560,6 +1560,11 @@ alias(
     actual = "//tensorflow/core/util:version_info",
 )
 
+alias(
+    name = "version_hdrs_lib",
+    actual = "//tensorflow/core/util:version_info_hdrs",
+)
+
 filegroup(
     name = "framework_internal_private_headers",
     srcs = [
