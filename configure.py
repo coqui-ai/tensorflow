@@ -1312,7 +1312,7 @@ def main():
   reset_tf_configure_bazelrc()
 
   cleanup_makefile()
-  setup_python(environ_cp)
+  # setup_python(environ_cp)
 
   if is_windows():
     environ_cp['TF_NEED_OPENCL'] = '0'
