@@ -7,7 +7,7 @@ load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
 load("@rules_cuda//cuda:dependencies.bzl", "rules_cuda_dependencies")
 
 def workspace():
-    native.register_toolchains("@local_config_python//:py_toolchain")
+    # native.register_toolchains("@local_config_python//:py_toolchain")
     rules_cuda_dependencies()
 
     closure_repositories()
